@@ -42,9 +42,6 @@
                             <li class="mb-4">
                                 <a href="https://www.redress.space" class="hover:underline">RE:DRESS</a>
                             </li>
-                            <li>
-                                <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
-                            </li>
                         </ul>
                     </div>
                     <div>
@@ -52,11 +49,12 @@
                         </h2>
                         <ul class="text-gray-500 dark:text-gray-400 font-medium">
                             <li class="mb-4">
-                                <a href="https://github.com/redress-space" class="hover:underline ">Github</a>
+                                <a href="https://www.instagram.com/redress.space?utm_source=qr" class="hover:underline ">Instagram</a>
                             </li>
                             <li>
                                 <a href="https://discord.gg/7G5N3n6U" class="hover:underline">Discord</a>
                             </li>
+                            
                         </ul>
                     </div>
                     <div>
