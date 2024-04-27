@@ -5,16 +5,43 @@
         <section class="container mx-auto px-4" data-path="0.1">
             <div class="relative mx-auto mb-12 pt-12 pb-64 xs:pb-40 lg:pb-12 border-b">
                 <h1 class="font-heading text-6xl sm:text-9xl md:text-10xl xl:text-13xl tracking-tightest">RE:DRESS</h1>
-                <div class="absolute bottom-0 right-0 mb-10 max-w-sm ml-auto text-left">
-                    <p>
-                        <span class="block">Discover personalized
-                            fashion like never before.</span>
-                        <span class="block">Our deep learning model curates
-                            outfits for your taste.</span>
-                    </p>
-                </div>
+                
             </div>
-            <div class="flex flex-wrap -mx-3 align-items-end" data-path="0.1.1">
+
+            <article class="mt-10">
+                <div class="font-heading text-6xl sm:text-9xl md:text-10xl xl:text-13xl tracking-tightest">
+                WHAT
+                </div>
+                <div class="mb-10 mt-10 text-4xl sm:text-3xl text-gray-900 text-left" >
+                We're tired of digging through stock inventories and searching for things across the internet.
+                You are in an ocean of offers and opportunities and this is exhausted.
+                </div>                
+            </article>
+
+
+
+            <article class="mt-10">
+                <div class="font-heading text-6xl sm:text-9xl md:text-10xl xl:text-13xl tracking-tightest text-center">
+                HOW
+                </div>
+                <div class="mb-10 mt-10 text-4xl sm:text-3xl text-gray-900 text-left" >
+                    <p>Conversational engine and a smart co-pilot in the digital marketplace. </p>
+                    <p>Designed for both businesses and shoppers, it learns your preferences to swiftly guide you to your desired products and services. </p>
+                </div>
+            </article>
+
+            <article class="mt-10">
+                <div class="font-heading text-6xl sm:text-9xl md:text-10xl xl:text-13xl tracking-tightest text-right">
+                WHY
+                </div>
+                <div class="mb-10 mt-10 text-4xl sm:text-3xl text-gray-900 text-left" >
+                    <p>Save time, enhance your shopping experience, and make consumption sustainable.</p>
+                    <p>Find exactly what you want with precision and embrace the future of intelligent shopping today.</p>
+                </div>
+            </article>
+
+
+            <!-- <div class="flex flex-wrap -mx-3 align-items-end" data-path="0.1.1">
                 <div class="w-full md:w-6/12 lg:w-7/12 px-3 relative" data-path="0.1.1.0">
                     <img class="block w-full h-64 lg:h-80 rounded-t-4xl object-cover"
                         src="assets/dhruv-patel-xiSBJmn79hk-unsplash.jpg" alt="" data-config-id="auto-img-4-1"
@@ -34,7 +61,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </section>
 
         <section class="pt-28 pb-20 overflow-hidden">
