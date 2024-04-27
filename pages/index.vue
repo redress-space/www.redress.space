@@ -3,15 +3,15 @@
     <div class="container mx-auto py-8 h-[90%]">
 
         <section class="container mx-auto px-4" data-path="0.1">
-            <div class="relative mx-auto mb-12 pt-12 pb-64 xs:pb-40 lg:pb-12 border-b">
+            <div class="relative mx-auto mb-8 pt-8 pb-64 xs:pb-40 lg:pb-12 border-b">
                 <Logo />
             </div>
         </section>
 
-        <section class=" flex items-center h-full justify-center pt-28 pb-28">
+        <section class=" flex items-center h-full justify-center pt-20 pb-10">
             <div>
-                <h1 class="text-center text-2xl sm:text-4xl md:text-2xl mb-28">UNDER CONSTRUCTION</h1>
-                <img class="w-96 h-96 rounded-lg" src="/public/undraw_dev.svg"/>
+                <h1 class="text-center text-2xl sm:text-4xl md:text-3xl mb-28">UNDER CONSTRUCTION</h1>
+                <img class="h-auto max-w-md " src="/public/undraw_dev.svg"/>
             </div>
         </section>
     </div>
@@ -77,3 +77,7 @@
         </div>
     </footer>
 </template>
+
+
+<style>
+</style>
