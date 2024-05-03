@@ -1,6 +1,6 @@
 <template>
     <section class="container mx-auto px-4 mb-16 " data-path="0.1">
-        <div class="relative mx-auto mb-0 pt-8 pb-8  flex justify-center">
+        <div class="relative mx-auto mb-0 pt-0 pb-8  flex justify-center">
             <a href="/">
                 <img src="public/logo-long-white.png" class="h-8 me-3" alt="Redress Logo" />
             </a>
