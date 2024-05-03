@@ -72,7 +72,7 @@
                         <div class="">
                             <hr class="my-4 mx-4" />
                             <div class="team-elem">
-                                <p class="text-center">AI researcher with more then 6 years of expr.</p>
+                                <p class="text-center">AI researcher with more than 6 years of expr.</p>
                             </div>                                                  
                             <div class="mt-5 team-elem ">
                                 <div class="mt-2 mr-4">
