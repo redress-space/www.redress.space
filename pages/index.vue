@@ -2,11 +2,8 @@
 
     <div class="container mx-auto py-8 h-[90%]">
 
-        <section class="container mx-auto px-4 mb-16 " data-path="0.1">
-            <div class="relative mx-auto mb-0 pt-8 pb-8  flex justify-center">
-                <img src="public/logo-long-white.png" class="h-8 me-3" alt="Redress Logo" />
-            </div>
-        </section>
+        <SiteHeader />
+
 
         <article class="md:mx-5 md:my-1 p-5 ">
 
@@ -74,7 +71,7 @@
                         <div class="">
                             <hr class="my-4 mx-4" />
                             <div class="team-elem">
-                                <p class="text-center">Deep Learning Engineer and Scientist with about 6 years</p>
+                                <p class="text-center">AI researcher with about 6 years</p>
                             </div>                                                  
                             <div class="mt-5 team-elem ">
                                 <div class="mt-2 mr-4">
@@ -102,7 +99,7 @@
                 <div class="w-1/8 team-elem">
                     <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900  group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 ">
                         <span class="text-xl relative px-5 py-2.5 transition-all ease-in duration-75 bg-white   group-hover:bg-opacity-0">
-                        <a href="/contact">Contact</a>
+                            <a href="/contact">Contact</a>
                         </span>
                     </button>
                 </div>
@@ -114,49 +111,7 @@
     </div>
 
 
-    <footer class="bg-white mt-8 mb-2">
-        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-            <div class="md:flex md:justify-between">
-                <div class="mb-0 md:mb-0">
-
-                    <div class="text-sm text-gray-400 hover:text-gray-700   md:ms-5 md:mt-4">
-                       <p class="mb-2">© 2024. All Rights Reserved.</p>
-                       <p>REDRESS SPACE LTD</p>
-                       <p>Parker Russell, Level 30 The Leadenhall Building</p>
-                       <p>122 Leadenhall Str.</p>
-                       <p>London, UK, EC3V 4AB</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-                    
-                    <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">Follow us
-                        </h2>
-                        <ul class="text-gray-500 font-medium">
-                            <li class="mb-4">
-                                <a href="https://www.instagram.com/redress.space?utm_source=qr" class="hover:underline ">Instagram</a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">Legal
-                        </h2>
-                        <ul class="text-gray-500  font-medium">
-                            <li class="mb-4">
-                                <a href="/privacy" class="hover:underline">Privacy Policy</a>
-                            </li>
-                            <li>
-                                <a href="/terms" class="hover:underline">Terms &amp; Conditions</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </footer>
+    <SiteFooter />
 </template>
 
 
