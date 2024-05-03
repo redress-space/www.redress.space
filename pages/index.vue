@@ -103,9 +103,7 @@
                         </span>
                     </button>
                 </div>
-            </section>  
-                        
-                               
+            </section>         
         </article>
 
     </div>

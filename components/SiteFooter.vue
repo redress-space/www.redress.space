@@ -22,7 +22,6 @@
                             <li class="mb-4">
                                 <a href="https://www.instagram.com/redress.space?utm_source=qr" class="hover:underline ">Instagram</a>
                             </li>
-                            
                         </ul>
                     </div>
                     <div>
