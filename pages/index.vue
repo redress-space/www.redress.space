@@ -48,7 +48,7 @@
                         <div class="">
                             <hr class="my-4 mx-4" />
                             <div class="team-elem">
-                                <p class="text-center">Software engineering lead with 12 y. of expririence</p>
+                                <p class="text-center">Software engineering lead with 12 yr. of experience</p>
                             </div>                        
                             <div class="mt-5 team-elem ">
                                 <!-- <p class="text-sm text-gray-400 hover:text-gray-700 mt-2">ex-Revolut; ex-Wix</p> -->
