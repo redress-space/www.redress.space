@@ -10,6 +10,7 @@
             <section class="block">
                 <h2 class="text-4xl font-semibold text-black my-16 text-center">Team</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-11" >
+
                     <section class="team-item">
                         <div class="team-elem">
                             <img class="rounded-full w-20 h-20 mb-3" src="public/linkedin/1707388155214.jpeg"/>
@@ -18,7 +19,7 @@
                             <h5 class="text-xl md:text-2xl font-medium	mb-1">Anastasia Demchuk</h5>
                         </div>
                         <div class="team-elem">
-                            <h5 class="text-sm mb-1 text-gray-400">business girl</h5>
+                            <h5 class="text-sm mb-1 text-gray-400">business girl // <span class="text-gray-600">CEO</span></h5>
                         </div>                           
                         <div class="">
                             <hr class="my-4 mx-4" />
@@ -42,7 +43,7 @@
                             <h5 class="text-xl md:text-2xl font-medium	mb-1">Bohdan Snisar</h5>
                         </div>
                         <div class="team-elem">
-                            <h5 class="text-sm  mb-1 text-gray-400">tech guy</h5>
+                            <h5 class="text-sm  mb-1 text-gray-400">tech guy // <span class="text-gray-600">CTO</span></h5>
                         </div>                        
                         <div class="">
                             <hr class="my-4 mx-4" />
@@ -56,8 +57,8 @@
                                 </div>                            
                             </div>
                         </div>
-
                     </section>
+
                     <section class="team-item">
                         <div class="team-elem">
                             <img class="rounded-full w-20 h-20 mb-3 grayscale" src="public/linkedin/1713993278780.jpeg"/>
@@ -66,12 +67,12 @@
                             <h5 class="text-xl md:text-2xl font-medium	mb-1">Alisa Vinogradova</h5>
                         </div>
                         <div class="team-elem">
-                            <h5 class="text-sm  mb-1 text-gray-400">ML girl & scientist</h5>
+                            <h5 class="text-sm  mb-1 text-gray-400">ai researcher girl // <span class="text-gray-600">AI Head</span></h5>
                         </div>                        
                         <div class="">
                             <hr class="my-4 mx-4" />
                             <div class="team-elem">
-                                <p class="text-center">AI researcher with about 6 years</p>
+                                <p class="text-center">AI researcher with more then 6 years of expr.</p>
                             </div>                                                  
                             <div class="mt-5 team-elem ">
                                 <div class="mt-2 mr-4">
@@ -117,15 +118,12 @@
     .block {
         @apply mb-60;
     }
-
     .team-item {
         @apply  py-4 md:px-0 lg:px-8 md:border;
     }
-
     .team-elem {
         @apply flex justify-center;
     }
-
     .btn {
         @apply font-bold py-2 px-4 rounded;
     }
