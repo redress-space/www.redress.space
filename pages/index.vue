@@ -4,7 +4,6 @@
 
         <SiteHeader />
 
-
         <article class="md:mx-5 md:my-1 p-5 ">
 
             <section class="block">
@@ -109,10 +108,12 @@
 
     </div>
 
-
     <SiteFooter />
 </template>
 
+<script setup lang="ts">
+    await navigateTo('/home')
+</script>
 
 <style scoped>
     .block {
