@@ -1,21 +1,29 @@
 {
-  "name": "nuxt-app",
   "private": true,
-  "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
   },
   "dependencies": {
-    "http-proxy-middleware": "^3.0.0",
-    "nuxt": "^3.11.2",
-    "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "bootstrap": "^5.3.3",
+    "next": "latest",
+    "next-themes": "^0.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^5.2.1",
+    "styled-components": "^6.1.11",
+    "swiper": "^11.1.4"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.12.0"
+    "@types/node": "20.14.2",
+    "@types/react": "18.3.3",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "typescript": "5.4.5"
   }
 }

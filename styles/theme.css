@@ -1,0 +1,46 @@
+/* themes.css */
+:root {
+  --body-bg: #ffffff;
+  --text-color: #000000;
+  --highlight-color: #000000;
+  --sidebox-bg: #dedede;
+  --business-bg: #f0ff94;
+  --featureBox-bg: #ffffff;
+  --border-color: 2px solid #000;
+}
+
+[data-theme="dark"] {
+  --body-bg: #000000;
+  --text-color: #ffffff;
+  --highlight-color: #f0ff94;
+  --sidebox-bg: #f0ff94;
+  --business-bg: #000000;
+  --featureBox-bg: #222222;
+  --border-color: 2px solid #fff;
+}
+
+/* Apply the variables */
+body {
+  background: var(--body-bg);
+  color: var(--text-color);
+}
+
+.highlight {
+  color: var(--highlight-color);
+}
+
+.sidebox {
+  background: var(--sidebox-bg);
+}
+
+.business {
+  background: var(--business-bg);
+}
+
+.featureBox {
+  background: var(--featureBox-bg);
+}
+
+.borderColor {
+  border: var(--border-color);
+}
