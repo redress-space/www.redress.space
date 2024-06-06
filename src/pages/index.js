@@ -1,5 +1,5 @@
 
-export const runtime = "edge";
+export const runtime = "experimental-edge";
 
 import Navbar from '../components/Navbar.jsx'
 import Footer from '../components/Footer.jsx'
