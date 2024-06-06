@@ -97,7 +97,7 @@ const WorkSection = () => {
 
                         <p className="text-left font-alexandria font-light text-lg md:text-xl">
                           Our advanced AI stylist analyzes your profile to curate
-                          outfits and suggest items that you'll love.
+                          outfits and suggest items that you&apos;ll love.
                         </p>
                       </div>
                     </div>
