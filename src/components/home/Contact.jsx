@@ -51,18 +51,13 @@ const Contact = () => {
           <div className="col-md-6 order-1 order-md-2 mb-5">
             <div className="md:mt-0 ">
 
-           {/*  <object type="image/svg+xml" data={img} className='main-sec-img z-50 mb-[-60px] md:mb-[-125px] lg:mb-[-150px] md:w-52 md:h-[70px]'></object> */}
+           
               <img
                 src='/assets/new-contact.png'
                 alt="Re-dress image"
                 className=" justify-end hidden md:flex md:mt-12 ml-16"
               />
-               {/* <object type="image/svg+xml" data={img3} className='hidden md:flex justify-center '></object> */}
-           {/*    <img
-                src={img2}
-                alt="Re-dress image"
-                className="flex md:hidden justify-center mx-auto"
-              /> */}
+
                <object type="image/svg+xml" data='/assets/contact-second.svg' className='flex md:hidden justify-center w-100'></object>
               
               <div className="hidden  contcact-img-donw md:flex justify-center md:mt-20 md:ml-9 lg:ml-9 gap-x-10  md:ml down-icon ">

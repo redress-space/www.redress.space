@@ -66,3 +66,32 @@ In order to enable the example:
 After doing this you can run the `dev` or `preview` script and visit the `/api/hello` route to see the example in action.
 
 Finally, if you also want to see the example work in the deployed application make sure to add a `MY_KV_NAMESPACE` binding to your Pages application in its [dashboard kv bindings settings section](https://dash.cloudflare.com/?to=/:account/pages/view/:pages-project/settings/functions#kv_namespace_bindings_section). After having configured it make sure to re-deploy your application.
+
+
+### Build Cloudflare Pages
+
+```
+npx @cloudflare/next-on-pages@1
+```
+
+### Build and preview your application locally
+To ensure that your application is being built in a manner that is fully compatible with Cloudflare Pages, before deploying it, or whenever you are comfortable checking the correctness of the application during your development process, you will want to build and preview it locally using Cloudflare’s workerd JavaScript runtime.
+
+If you have created your project with C3, do this by running:
+
+```
+npm run preview
+```
+
+If you have created your project without C3, run:
+
+```
+npx @cloudflare/next-on-pages@1
+```
+
+And preview your project by running:
+
+```
+npx wrangler pages dev .vercel/output/static
+```
+

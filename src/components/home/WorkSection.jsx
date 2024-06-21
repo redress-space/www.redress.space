@@ -6,6 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 
+import styles from './WorkSection.module.css';
+
 // import required modules
 import { Navigation } from "swiper/modules";
 const WorkSection = () => {
@@ -15,21 +17,7 @@ const WorkSection = () => {
         <h3 className="mx-auto fonts-w my-0  text-center tracking-wide leading-8 md:pb-10 text-[43px] md:text-8xl lg:text-9xl xl:text-[150px] xl:leading-[186px] font-alexandria">
           How it works?
         </h3>
-        {/*   <div className='w-9/12 md:w-full mx-auto md:flex justify-start items-center gap-x-4 pt-3 howwork'>
-            <div className='pt-6 pb-3 md:w-1/2'>
-                <h1 className='font-alexandria font-light  highlight text-xl md:text-3xl lg:text-5xl xl:text-6xl mb-3.5'>1.</h1>
-
-            <h3 className=' font-alexandria font-semibold text-[32px] xl:text-[32px]'>Create Your Profile: </h3>
-            <p className=' font-alexandria font-light text-lg md:text-xl'>Sign up and tell us about your style preferences, sizes, and fashion needs.</p>
-            </div>
-            <div className='flex justify-center  md:w-1/2'>
-             
-                <object type="image/svg+xml" data={phone} className='wrok-section-img w-44 h-96 md:h-[85rem] work-img'></object>
-            </div>
-            <div className='btn-contacner mt-6 flex justify-center md:mt-52  md:w-1/2'>
-                <button className='borderColor px-4 py-1 text-center hover:bg-primaryText transition-all hover:text-black try-btn font-alexandria rounded-sm font-normal text-lg md:text-xl xl:text-2xl ;lg:h-[34px] lg:w-[238px]'>Try it Now</button>
-            </div>
-        </div> */}
+        
 
         <div className="">
           <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
@@ -64,7 +52,7 @@ const WorkSection = () => {
                     <object
                       type="image/svg+xml"
                       data='/assets/work-phone.svg'
-                      className="wrok-section-img w-44 h-96 md:h-[85rem] work-img"
+                      className={`${styles.workSectionImg} w-44 h-96 md:h-[85rem] work-img`}
                     ></object>
                   </div>
                 </div>
@@ -106,7 +94,7 @@ const WorkSection = () => {
                     <object
                       type="image/svg+xml"
                       data='/assets/work-phone-2.svg'
-                      className="wrok-section-img w-44 h-96 md:h-[85rem] work-img"
+                      className={`${styles.workSectionImg} w-44 h-96 md:h-[85rem] work-img`}
                     ></object>
                   </div>
                 </div>
@@ -145,7 +133,7 @@ const WorkSection = () => {
                     <object
                       type="image/svg+xml"
                       data='/assets/work-phone-2.svg'
-                      className="wrok-section-img w-44 h-96 md:h-[85rem] work-img"
+                      className={`${styles.workSectionImg} w-44 h-96 md:h-[85rem] work-img`}
                     ></object>
                   </div>
                 </div>
@@ -185,7 +173,7 @@ const WorkSection = () => {
                     <object
                       type="image/svg+xml"
                       data='/assets/work-phone-2.svg'
-                      className="wrok-section-img w-44 h-96 md:h-[85rem] work-img"
+                      className={`${styles.workSectionImg} w-44 h-96 md:h-[85rem] work-img`}
                     ></object>
                   </div>
                 </div>

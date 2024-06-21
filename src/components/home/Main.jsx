@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from './Main.module.css';
+
 const MainSection = () => {
   return (
     <>
@@ -20,8 +22,7 @@ const MainSection = () => {
                 </div>
             </div>
             <div className='flex justify-center'>
-               {/*  <img src={mainImg} alt="re-dress home page" className='main-sec-img z-50 mb-[-60px] md:mb-[-125px] lg:mb-[-150px] md:w-52 md:h-[70px]'/> */}
-                <object type="image/svg+xml" data='/assets/new-home-mobile-2.svg' className='main-sec-img z-50 mb-[-60px] md:mb-[-125px] lg:mb-[-150px] md:w-52 md:h-[70px]'></object>
+                <object type="image/svg+xml" data='/assets/new-home-mobile-2.svg' className={`${styles.mainSecImg} z-50 mb-[-60px] md:mb-[-125px] lg:mb-[-150px] md:w-52 md:h-[70px]`}></object>
                 
             </div>
         </div> 
