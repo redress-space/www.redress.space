@@ -1,75 +1,97 @@
-# Nuxt 3 Minimal Starter
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`c3`](https://developers.cloudflare.com/pages/get-started/c3).
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Getting Started
 
-## Setup
-
-Make sure to install the dependencies:
+First, run the development server:
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
+# or
 yarn dev
-
-# bun
-bun run dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Production
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Build the application for production:
+## Cloudflare integration
 
-```bash
-# npm
-npm run build
+Besides the `dev` script mentioned above `c3` has added a few extra scripts that allow you to integrate the application with the [Cloudflare Pages](https://pages.cloudflare.com/) environment, these are:
+  - `pages:build` to build the application for Pages using the [`@cloudflare/next-on-pages`](https://github.com/cloudflare/next-on-pages) CLI
+  - `preview` to locally preview your Pages application using the [Wrangler](https://developers.cloudflare.com/workers/wrangler/) CLI
+  - `deploy` to deploy your Pages application using the [Wrangler](https://developers.cloudflare.com/workers/wrangler/) CLI
 
-# pnpm
-pnpm run build
+> __Note:__ while the `dev` script is optimal for local development you should preview your Pages application as well (periodically or before deployments) in order to make sure that it can properly work in the Pages environment (for more details see the [`@cloudflare/next-on-pages` recommended workflow](https://github.com/cloudflare/next-on-pages/blob/05b6256/internal-packages/next-dev/README.md#recommended-workflow))
 
-# yarn
-yarn build
+### Bindings
 
-# bun
-bun run build
+Cloudflare [Bindings](https://developers.cloudflare.com/pages/functions/bindings/) are what allows you to interact with resources available in the Cloudflare Platform.
+
+You can use bindings during development, when previewing locally your application and of course in the deployed application:
+
+- To use bindings in dev mode you need to define them in the `next.config.js` file under `setupDevBindings`, this mode uses the `next-dev` `@cloudflare/next-on-pages` submodule. For more details see its [documentation](https://github.com/cloudflare/next-on-pages/blob/05b6256/internal-packages/next-dev/README.md).
+
+- To use bindings in the preview mode you need to add them to the `pages:preview` script accordingly to the `wrangler pages dev` command. For more details see its [documentation](https://developers.cloudflare.com/workers/wrangler/commands/#dev-1) or the [Pages Bindings documentation](https://developers.cloudflare.com/pages/functions/bindings/).
+
+- To use bindings in the deployed application you will need to configure them in the Cloudflare [dashboard](https://dash.cloudflare.com/). For more details see the  [Pages Bindings documentation](https://developers.cloudflare.com/pages/functions/bindings/).
+
+#### KV Example
+
+`c3` has added for you an example showing how you can use a KV binding.
+
+In order to enable the example:
+- Search for javascript/typescript lines containing the following comment:
+  ```ts
+  // KV Example:
+  ```
+  and uncomment the commented lines below it.
+- Do the same in the `wrangler.toml` file, where
+  the comment is:
+  ```
+  # KV Example:
+  ```
+- If you're using TypeScript run the `cf-typegen` script to update the `env.d.ts` file:
+  ```bash
+  npm run cf-typegen
+  # or
+  yarn cf-typegen
+  # or
+  pnpm cf-typegen
+  # or
+  bun cf-typegen
+  ```
+
+After doing this you can run the `dev` or `preview` script and visit the `/api/hello` route to see the example in action.
+
+Finally, if you also want to see the example work in the deployed application make sure to add a `MY_KV_NAMESPACE` binding to your Pages application in its [dashboard kv bindings settings section](https://dash.cloudflare.com/?to=/:account/pages/view/:pages-project/settings/functions#kv_namespace_bindings_section). After having configured it make sure to re-deploy your application.
+
+
+### Build Cloudflare Pages
+
+```
+npx @cloudflare/next-on-pages@1
 ```
 
-Locally preview production build:
+### Build and preview your application locally
+To ensure that your application is being built in a manner that is fully compatible with Cloudflare Pages, before deploying it, or whenever you are comfortable checking the correctness of the application during your development process, you will want to build and preview it locally using Cloudflare’s workerd JavaScript runtime.
 
-```bash
-# npm
+If you have created your project with C3, do this by running:
+
+```
 npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+If you have created your project without C3, run:
+
+```
+npx @cloudflare/next-on-pages@1
+```
+
+And preview your project by running:
+
+```
+npx wrangler pages dev .vercel/output/static
+```
+
