@@ -4,9 +4,9 @@ import styles from './FadeInGrid.module.css';
 
 const FadeInGrid = ({ images }) => {
   return (
-    <div className="grid grid-cols-2 gap-4 py-4 ">
+    <div className="grid grid-cols-2 gap-4 py-4 md:px-4 ">
       {images.map((image, index) => (
-        <div key={index} className={`${styles.card} relative opacity-0 py-4 font-alexandria`}>
+        <div key={index} className={`${styles.card} relative opacity-0 md:px-4 py-4 font-alexandria`}>
           <div className={`${styles.imageWrapp} relative p-4`}>
             <img src={image.src} alt={`Grid item ${index}`} className={`object-fit  ${styles.image}`} />
           </div>
