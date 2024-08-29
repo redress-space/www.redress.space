@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Footer = () => {
+  return (<></>);
   return (
     <div className=' py-2 mt-0'>
         <div className='container'>
