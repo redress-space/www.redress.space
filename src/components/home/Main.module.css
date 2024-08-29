@@ -1,7 +1,11 @@
 
 .container {
-  max-height: 100vh;
-  min-height: 75vh;
+
+
+  @screen md {
+    max-height: 100vh;
+    min-height: 75vh;
+  }
 }
 
 .line {

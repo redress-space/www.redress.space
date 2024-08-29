@@ -16,22 +16,19 @@ const MainSection = () => {
   const jeans = [
   ];
 
-  const [names, setNames] = useState([]);  
-  const [title, setTitle] = useState('');  
+  const [names, setNames] = useState([]);
+  const [title, setTitle] = useState('');
 
   useEffect(() => {
     setNames(sneakers);
     setTitle('Bright colored sneakers that feel old school and classic');
-  });
+  }, []);
 
-  const onEvent = () => {
-    setNames(sneakers);
-  };
 
   return (
     <>
-      <div className={` flex-grow flex justify-items-stretch	font-alexandria  h-full `}>
-        <div className={`${styles.container} w-full h-full flex flex-col justify-evenly	 md:w-2/5`}>
+      <div className={`flex-grow flex flex-col md:flex-row justify-items-stretch	font-alexandria  h-full `}>
+        <div className={`${styles.container} w-full h-full flex flex-col justify-evenly	 md:w-2/5 z-10`}>
           <div className='mt-22'>
 
             <div className='text-5xl mb-6	'>
@@ -40,9 +37,9 @@ const MainSection = () => {
 
             <div className='mb-24'>
               <h2 className={`text-3xl font-light ${styles.line}`}>
-                <Typewriter 
-                  text={title} 
-                  onComplete={() => {}} />
+                <Typewriter
+                  text={title}
+                  onComplete={() => { }} />
               </h2>
             </div>
 
@@ -56,7 +53,7 @@ const MainSection = () => {
 
         </div>
 
-        <div className='w-full md:w-3/5'>
+        <div className='md:relative w-full md:w-3/5'>
           <FadeInGrid images={names} />
         </div>
 
