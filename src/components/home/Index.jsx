@@ -14,18 +14,8 @@ import ClientExpriance from './ClientExpriance'
 
 const Index = () => {
   return (
-    <div className='flex min-h-screen w-screen flex-col p-6 transition-colors duration-[3s] md:justify-between md:px-20 md:py-14 '>
+    <div className=''>
       <Main/>
-      {/* <Dress  /> */}
-      {/* <Gallary/> */}
-      {/* <WeBelive /> */}
-      {/* <CenterContent/> */}
-      {/* <WorkSection/> */}
-      {/* <Feture /> */}
-      {/* <ForBusiness  id="business-solution"/> */}
-      {/* <HowWork/> */}
-      {/* <ClientExpriance/> */}
-      {/* <Contact/> */}
     </div>
   )
 }

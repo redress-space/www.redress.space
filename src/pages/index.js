@@ -8,7 +8,7 @@ import HomeBody from '../components/home/Index.jsx';
 
 export default function Home() {
   return (
-    <div>
+    <main className='flex min-h-screen w-screen flex-col p-6 transition-colors duration-[3s] md:justify-between md:px-20 md:py-14 '>
       <Navbar />
       
       <main>
@@ -16,6 +16,6 @@ export default function Home() {
       </main>
 
       <Footer />
-    </div>
+    </main>
   );
 }

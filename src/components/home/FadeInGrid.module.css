@@ -1,11 +1,11 @@
 /* FadeInGrid.css */
 .card {
-  animation: fadeIn 2s forwards;
+  animation: fadeIn 3s forwards;
 }
 
 .image {
   @apply h-auto;
-  width: 14rem;
+  width: 12rem;
 }
 
 .imageWrapp::before {

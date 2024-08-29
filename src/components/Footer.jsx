@@ -1,7 +1,15 @@
 import React from 'react'
+import Link from 'next/link';
 
 const Footer = () => {
-  return (<></>);
+  return (<>
+  
+  <div className='flex'>
+            <Link href={'/terms'}><span className='font-medium text-gray-800 hover:underline'>Terms</span></Link>
+            <div className='px-3'>|</div>
+            <Link href={'/privacy'}><span className='font-medium text-gray-800 hover:underline'>Privacy</span></Link>
+          </div>
+  </>);
   return (
     <div className=' py-2 mt-0'>
         <div className='container'>
