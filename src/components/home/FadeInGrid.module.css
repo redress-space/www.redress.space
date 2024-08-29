@@ -1,0 +1,32 @@
+/* FadeInGrid.css */
+.card {
+  animation: fadeIn 3s forwards;
+}
+
+.image {
+  @apply h-auto;
+  width: 12rem;
+}
+
+.imageWrapp::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-color: rgba(34, 34, 34, .04);
+  z-index: 1;
+}
+
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

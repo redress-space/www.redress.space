@@ -1,0 +1,51 @@
+
+
+/* ImageGrid.module.css */
+@keyframes move-horizontal {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(20px); /* Smaller movement */
+    }
+  }
+  
+  @keyframes move-vertical {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(20px); /* Smaller movement */
+    }
+  }
+  
+  .imageGrid {
+    @apply relative overflow-hidden;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .imageCard {
+    @apply absolute transition-transform duration-[10000ms] ease-linear;
+  }
+  
+  .big {
+    @apply w-48 h-48;
+  }
+  
+  .small {
+    @apply w-24 h-24;
+  }
+  
+  .horizontal {
+    animation: move-horizontal 10s infinite alternate linear;
+  }
+  
+  .vertical {
+    animation: move-vertical 10s infinite alternate linear;
+  }
+  
+  .image {
+    @apply w-full h-full object-cover;
+  }
+  

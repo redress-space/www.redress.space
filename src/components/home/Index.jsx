@@ -1,5 +1,6 @@
 import React from 'react'
 import Main from './Main'
+
 import CenterContent from './CenterContent'
 import ForBusiness from './ForBusiness'
 import HowWork from './HowWork'
@@ -10,22 +11,12 @@ import WorkSection from './WorkSection'
 import Feture from './Feture'
 import Contact from './Contact'
 import ClientExpriance from './ClientExpriance'
+
 const Index = () => {
   return (
-    <>
+    <div className=''>
       <Main/>
-      <Dress  />
-      <Gallary/>
-      <WeBelive />
-      <CenterContent/>
-      <WorkSection/>
-      <Feture />
-      <ForBusiness  id="business-solution"/>
-      <HowWork/>
-      <ClientExpriance/>
-      <Contact/>
-
-    </>
+    </div>
   )
 }
 

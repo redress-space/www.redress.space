@@ -1,24 +1,13 @@
 
-
-@media (max-width: 767px) {
-    .mainSecImg {
-      width: 221px;
-      height: 454px;
-    }
-}
+.container {
 
 
-@media (min-width:768px) and (max-width:1439px){    
-    .mainSecImg {
-      width: 100%;
-      height: 500.5px;
-      margin-right: 3rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .mainSecImg {
-      width: 221px;
-      height: 454px;
-    }
+  @screen md {
+    max-height: 100vh;
+    min-height: 75vh;
   }
+}
+
+.line {
+  height: 5rem;
+}

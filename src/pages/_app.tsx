@@ -3,7 +3,7 @@ import '@/styles/global.css';
 import '@/styles/main.css';
 import '@/styles/theme.css';
 
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 
 import type { AppProps } from 'next/app'
