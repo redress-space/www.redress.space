@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa6";
+
 const Toggle = ({toggleTheme, theme}) => {
   return (
     <div className='relative'>
