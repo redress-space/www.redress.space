@@ -20,7 +20,13 @@
   z-index: 1;
 }
 
+.fadeIn {
+  opacity: 1;
+}
 
+.fadeOut {
+  opacity: 0;
+}
 
 @keyframes fadeIn {
   0% {

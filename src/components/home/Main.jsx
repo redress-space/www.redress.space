@@ -13,17 +13,42 @@ const MainSection = () => {
     { src: 'https://cdn.redress.space/farfetch/f06dff54600ca187775e6732d814a9aec9deec53.jpg', alt: 'Low-top sneakers', sub: '840$' },
   ];
 
-  const jeans = [
+  const party = [
+    { src: 'https://cdn.redress.space/farfetch/fc47749f4fe70f6bd3789f8b758d9ec357a7a3bb.jpg', alt: 'Borsalino', sub: '220$' },
+    { src: 'https://cdn.redress.space/farfetch/0c8b64a6919af7ca02a16cc7ea12b4ac5c402961.jpg', alt: 'Strappy pumps', sub: '680$' },
+    { src: 'https://cdn.redress.space/farfetch/34a616e0bac3de5318585039aafd42d8f280d41d.jpg', alt: 'Emanuele Bicocchi', sub: '380$' },
+    { src: 'https://cdn.redress.space/farfetch/894653ffbb8e80bae77dbfe00aa94ad04efb05ff.jpg', alt: 'Rachel Gilbert', sub: '1800$' },    
   ];
 
-  const [names, setNames] = useState([]);
+  const sets = [
+    {data: sneakers, alt: 'Bright colored sneakers that feel old school and classic'}, 
+    {data: party, alt: 'I need a look for Gatsby Party'}
+  ];
+
+  const [images, setImages] = useState([]);
   const [title, setTitle] = useState('');
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    setNames(sneakers);
-    setTitle('Bright colored sneakers that feel old school and classic');
-  }, []);
+    setImages(sets[index].data);
+    setTitle(sets[index].alt);
+  }, [index]);
 
+
+  const moveNext = () => {
+    let idx = index + 1;
+    if (idx >= sets.length) {
+      idx = 0;
+    } 
+
+    setIndex(idx);
+  }
+
+  const onCompletion = () => {
+    setTimeout(() => {
+      moveNext();
+    }, 3500);
+  }
 
   return (
     <>
@@ -39,7 +64,7 @@ const MainSection = () => {
               <h2 className={`text-3xl font-light ${styles.line}`}>
                 <Typewriter
                   text={title}
-                  onComplete={() => { }} />
+                  onComplete={onCompletion} />
               </h2>
             </div>
 
@@ -54,7 +79,7 @@ const MainSection = () => {
         </div>
 
         <div className='md:relative w-full md:w-3/5'>
-          <FadeInGrid images={names} />
+          <FadeInGrid images={images} />
         </div>
 
       </div>
