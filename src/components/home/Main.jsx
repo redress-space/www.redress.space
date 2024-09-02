@@ -83,7 +83,7 @@ const MainSection = () => {
 
             <div>
               <button className="submit-btn w-fit font-light border-2 border-black px-7 py-1 transition-all hover:bg-primaryText hover:text-black  md:py-3 md:px-12 lg:px-14 text-lg md:text-xl lg:text-2xl  ">
-                Waitlist
+                Join the waitlist
               </button>
             </div>
           </div>
