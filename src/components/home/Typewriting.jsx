@@ -18,16 +18,10 @@ const Typewriter = ({ text, speed = 60, onComplete }) => {
       }, speed);
 
       return () => clearTimeout(timeout);
-    } else if (onComplete) {
-      const minCompletionTime = text.length * speed;
-      const elapsedTime = currentIndex * speed;
-      const remainingTime = Math.max(minCompletionTime - elapsedTime, 0);
+    } else if (onComplete && displayedText) {
+      onComplete();
 
-      const timeout = setTimeout(() => {
-        onComplete();
-      }, remainingTime);
-
-      return () => clearTimeout(timeout);
+      // return () => clearTimeout(timeout);
     }
 
   }, [currentIndex, text, speed]);

@@ -1,14 +1,21 @@
-/* FadeInGrid.css */
 .card {
-  animation: fadeIn 3s forwards;
+  --animation-speed: 1s;
 }
 
 .image {
-  @apply h-auto;
-  width: 12rem;
+  display: block
 }
 
-.imageWrapp::before {
+.imageWrap {
+  @apply h-auto;
+  width: 100%;
+
+  @screen md {
+    width: 17rem;
+  }
+}
+
+.overaly::before {
   content: "";
   pointer-events: none;
   position: absolute;
@@ -20,13 +27,37 @@
   z-index: 1;
 }
 
+.overaly {
+  position: relative;
+  --border-w: 4px;
+  --border-style: var(--border-w) solid rgba(255, 255, 255, 0.6);
+  --border-space: 1.725rem;
+
+  @screen md {
+    --border-w: 8px;
+  }  
+}
+
 .fadeIn {
   opacity: 1;
+  animation: fadeIn var(--animation-speed) forwards;
 }
 
 .fadeOut {
   opacity: 0;
+  animation: fadeOut var(--animation-speed) forwards; 
 }
+
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 
 @keyframes fadeIn {
   0% {
@@ -35,4 +66,39 @@
   100% {
     opacity: 1;
   }
+}
+
+
+.overlayElement {
+  position: absolute;
+  width: 2rem; /* controls the length of the borders */
+  height: 2rem;  /* controls the height of the borders */
+}
+
+.overlay .topLeft {
+  border-left: var(--border-style);
+  border-top: var(--border-style);
+  top: var(--border-space);
+  left: var(--border-space);
+}
+
+.overlay .topRight {
+  border-right: var(--border-style);
+  border-top: var(--border-style);
+  top: var(--border-space);
+  right: var(--border-space);
+}
+
+.overlay .bottomLeft {
+  border-left: var(--border-style);
+  border-bottom: var(--border-style);
+  bottom: var(--border-space);
+  left: var(--border-space);
+}
+
+.overlay .bottomRight {
+  border-right: var(--border-style);
+  border-bottom: var(--border-style);
+  bottom: var(--border-space);
+  right: var(--border-space);
 }

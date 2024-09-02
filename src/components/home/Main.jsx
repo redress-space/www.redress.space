@@ -20,14 +20,24 @@ const MainSection = () => {
     { src: 'https://cdn.redress.space/farfetch/894653ffbb8e80bae77dbfe00aa94ad04efb05ff.jpg', alt: 'Rachel Gilbert', sub: '1800$' },    
   ];
 
+  const somethigLikeThis = [
+    { src: 'https://cdn.redress.space/public/anon/37a03a54d013db8b9a695e8d2b7814f4.jpg', camera: true },
+    { src: 'https://cdn.redress.space/farfetch/07d2c768996c0aa9c3937cf80f296fb83c9e3d58.jpg', alt: 'Circolo 1901', sub: '500$' },
+    { src: 'https://cdn.redress.space/farfetch/d54f39a3f2a140eed5180b0d68577a96456fe351.jpg', alt: 'Vince', sub: '170$' },
+    { src: 'https://cdn.redress.space/farfetch/bc51dc242d8d0d5ed7030d5ecd0c5534c47a41af.jpg', alt: 'Versace', sub: '430$' },    
+  ];  
+
   const sets = [
     {data: sneakers, alt: 'Bright colored sneakers that feel old school and classic'}, 
-    {data: party, alt: 'I need a look for Gatsby Party'}
+    {data: party, alt: 'I need a look for Gatsby Party'},
+    {data: somethigLikeThis, alt: 'Get me similar look'}
   ];
 
   const [images, setImages] = useState([]);
   const [title, setTitle] = useState('');
   const [index, setIndex] = useState(0);
+
+  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
     setImages(sets[index].data);
@@ -44,10 +54,13 @@ const MainSection = () => {
     setIndex(idx);
   }
 
-  const onCompletion = () => {
-    setTimeout(() => {
-      moveNext();
-    }, 3500);
+  const onTextCompletion = () => {
+    console.log('text');
+  }
+
+  const onFadeInCompletion = () => {
+    console.log('fade in');
+    setFadeOut(true);
   }
 
   return (
@@ -60,11 +73,11 @@ const MainSection = () => {
               <h1>REDRESS</h1>
             </div>
 
-            <div className='mb-24'>
-              <h2 className={`text-3xl font-light ${styles.line}`}>
+            <div className='mb-4 md:mb-24'>
+              <h2 className={`text-xl md:text-3xl font-light ${styles.line}`}>
                 <Typewriter
                   text={title}
-                  onComplete={onCompletion} />
+                  onComplete={onTextCompletion} />
               </h2>
             </div>
 
@@ -78,8 +91,12 @@ const MainSection = () => {
 
         </div>
 
-        <div className='md:relative w-full md:w-3/5'>
-          <FadeInGrid images={images} />
+        <div className='md:relative w-full md:w-4/5 lg:w-3/5 xl:w-3/6'>
+          <FadeInGrid 
+            images={images} 
+            onFade={onFadeInCompletion}
+            fadeOut={fadeOut}
+          />
         </div>
 
       </div>
