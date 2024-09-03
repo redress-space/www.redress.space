@@ -37,30 +37,44 @@ const MainSection = () => {
   const [title, setTitle] = useState('');
   const [index, setIndex] = useState(0);
 
-  const [fadeOut, setFadeOut] = useState(false);
+  const [textDone, setTextDone] = useState(false);
+  const [imagesDone, setImagesDone] = useState(false);
 
   useEffect(() => {
     setImages(sets[index].data);
     setTitle(sets[index].alt);
   }, [index]);
 
+  useEffect(() => {
+    const move = () => {
+      let idx = index + 1;
+      if (idx >= sets.length) {
+        idx = 0;
+      } 
+      setTextDone(false);
+      setImagesDone(false);
+      setIndex(idx);
+    };
 
-  const moveNext = () => {
-    let idx = index + 1;
-    if (idx >= sets.length) {
-      idx = 0;
-    } 
+    if (textDone && imagesDone) {
+      const  timeout = setTimeout(() => move(), 2000);
+      return () => clearTimeout(timeout);
+    }
+  }, [textDone, imagesDone]);
 
-    setIndex(idx);
-  }
+
 
   const onTextCompletion = () => {
-    console.log('text');
+    setTextDone(true);
   }
 
   const onFadeInCompletion = () => {
-    console.log('fade in');
-    setFadeOut(true);
+    console.log(`onFadeInCompletion {completedAnimations}`);
+    setImagesDone(true);
+  }
+
+  const onFadeOutCompletion = () => {
+    // setImagesDone(true);
   }
 
   return (
@@ -87,18 +101,15 @@ const MainSection = () => {
               </button>
             </div>
           </div>
-
-
         </div>
 
         <div className='md:relative w-full md:w-4/5 lg:w-3/5 xl:w-3/6'>
           <FadeInGrid 
             images={images} 
-            onFade={onFadeInCompletion}
-            fadeOut={fadeOut}
+            onFadeInComplete={onFadeInCompletion}
+            onFadeOutComplete={onFadeOutCompletion}
           />
         </div>
-
       </div>
     </>
 

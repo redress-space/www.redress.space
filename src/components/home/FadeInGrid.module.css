@@ -1,5 +1,6 @@
-.card {
-  --animation-speed: 1s;
+.cards {
+  --animation-speed-out: 1.5s;
+  --animation-speed-in: 2s;
 }
 
 .image {
@@ -40,12 +41,12 @@
 
 .fadeIn {
   opacity: 1;
-  animation: fadeIn var(--animation-speed) forwards;
+  animation: fadeIn var(--animation-speed-in) forwards;
 }
 
 .fadeOut {
   opacity: 0;
-  animation: fadeOut var(--animation-speed) forwards; 
+  animation: fadeOut var(--animation-speed-out) forwards; 
 }
 
 
