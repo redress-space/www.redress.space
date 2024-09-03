@@ -9,6 +9,8 @@ import { Checkbox } from "@headlessui/react";
 import { redirect } from 'next/navigation'
 import Link from "next/link";
 
+export const runtime = 'edge';
+
 export default function WaitlistPage() {
   const [email, setEmail] = useState("");
   const [code, setCode] = useState("");

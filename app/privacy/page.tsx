@@ -1,5 +1,5 @@
 
-export const runtime = "experimental-edge";
+export const runtime = "edge";
 
 export default function Privacy() {
   return (
