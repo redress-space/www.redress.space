@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Typewriter = ({ text, speed = 60, onComplete }) => {
+const Typewriter = ({ text, speed = 80, onComplete }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -18,19 +18,10 @@ const Typewriter = ({ text, speed = 60, onComplete }) => {
       }, speed);
 
       return () => clearTimeout(timeout);
-    } else if (onComplete) {
-      const minCompletionTime = text.length * speed;
-      const elapsedTime = currentIndex * speed;
-      const remainingTime = Math.max(minCompletionTime - elapsedTime, 0);
-
-      const timeout = setTimeout(() => {
-        onComplete();
-      }, remainingTime);
-
-      return () => clearTimeout(timeout);
+    } else if (currentIndex === text.length && onComplete) {
+      onComplete();
     }
-
-  }, [currentIndex, text, speed]);
+  }, [currentIndex, text, speed, onComplete]);
 
   return <span>{displayedText}</span>;
 };
