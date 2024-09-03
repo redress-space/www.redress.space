@@ -195,9 +195,8 @@ export default function WaitlistPage() {
           </svg>
         </button>
       </div>
-      {/* {!verificationDone && (waitVerify ? waitCode() : emailForm())} */}
-      {/* {verificationDone && done()} */}
-      {done()}
+      {!verificationDone && (waitVerify ? waitCode() : emailForm())}
+      {verificationDone && done()}
     </div>
   );
 }
