@@ -22,6 +22,8 @@ export default function WaitlistPage() {
   const [waitVerify, setWaitVerify] = useState(false);
   const [verificationDone, setVerificationDone] = useState(false);
 
+  
+
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -45,6 +47,25 @@ export default function WaitlistPage() {
       setMessage(error.message || "An error occurred.");
     }
   };
+
+  const done = () => (
+    <div className="w-full max-w-md">
+      <div className="mb-28 text-center">
+        <h1 className="text-5xl mb-4 font-alexandria">REDRESS</h1>
+        <p>
+          All done! We’ll notify you when we will be ready!
+        </p>
+      </div>
+      <div className="w-full">
+        <button
+            onClick={() => router.push("/")}
+            className="w-full p-2 bg-gray-600 text-white hover:bg-gray-700  "
+          >
+            Exit
+          </button>
+      </div>
+    </div>
+  );
 
   const emailForm = () => (
     <div className="w-full max-w-md">
@@ -174,8 +195,9 @@ export default function WaitlistPage() {
           </svg>
         </button>
       </div>
-      {verificationDone && <div className="text-2xl text-center font-alexandria"><h1>Thanks!</h1></div>}
-      {!verificationDone && (waitVerify ? waitCode() : emailForm())}
+      {/* {!verificationDone && (waitVerify ? waitCode() : emailForm())} */}
+      {/* {verificationDone && done()} */}
+      {done()}
     </div>
   );
 }
