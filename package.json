@@ -9,11 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.5.1",
+    "@supabase/supabase-js": "^2.45.3",
     "bootstrap": "^5.3.3",
-    "next": "^14.2.3",
+    "next": "^14.2.7",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
+    "resend": "^4.0.0",
     "swiper": "^11.1.4"
   },
   "devDependencies": {
