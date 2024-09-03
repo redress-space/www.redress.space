@@ -1,6 +1,7 @@
 // app/actions/verifyCode.ts
 'use server';
 
+import { sendOnJoinWaitlistEmail } from "../../utils/email/resend";
 import { createClient } from '../../utils/supabase/server';
 const supabase = createClient();
 
@@ -26,4 +27,6 @@ export async function verifyCode(email: string, code: string): Promise<void> {
   if (updateError) {
     throw new Error('Error updating verification status.');
   }
+
+  await sendOnJoinWaitlistEmail(email);
 }

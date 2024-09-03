@@ -2,21 +2,10 @@
 "use server";
 
 import { createClient } from "../../utils/supabase/server";
-import { Resend } from "resend";
-import VerificationEmail from "../../components/email-templates/verificationEmail";
+import { sendVerificationEmail } from "../../utils/email/resend";
 
 const supabase = createClient();
-const resend = new Resend(process.env.RESEND_API_KEY!);
 
-const sendEmail = async (email: string, verificationCode: string) => {
-  await resend.emails.send({
-    from: "no-reply@redress.space",
-    to: email,
-    subject: `Your REDRESS verification code: ${verificationCode}`,
-    text: `Your REDRESS verification code is: ${verificationCode}`,
-    react: VerificationEmail({verificationCode}),
-  });
-};
 
 export async function signUp(email: string) {
   if (!email) {
@@ -69,7 +58,7 @@ export async function signUp(email: string) {
 
   // Send the verification code to the user's email using Resend
   try {
-    await sendEmail(email, verificationCode);
+    await sendVerificationEmail(email, verificationCode);
   } catch (error) {
     throw new Error("Failed to send verification email.");
   }
