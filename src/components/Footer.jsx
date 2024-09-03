@@ -13,10 +13,7 @@ const Footer = () => {
         <div className='px-3 dark:text-white'>|</div>
         <Link href={'/privacy'}><span className='font-medium text-gray-600 dark:text-white hover:underline '>Privacy</span></Link>
       </div>
-
-
     </div>
-
   </>);
 
 }
