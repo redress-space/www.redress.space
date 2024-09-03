@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-
+import { useRouter } from "next/navigation";
 import styles from './Main.module.css';
 
 import Typewriter from './Typewriting';
@@ -35,12 +35,14 @@ const MainSection = () => {
     {data: somethigLikeThis, alt: 'Get me similar look'}
   ];
 
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState<any[]>([]);
   const [title, setTitle] = useState('');
   const [index, setIndex] = useState(0);
 
   const [textDone, setTextDone] = useState(false);
   const [imagesDone, setImagesDone] = useState(false);
+
+  const router = useRouter();
 
   useEffect(() => {
     setImages(sets[index].data);
@@ -98,7 +100,9 @@ const MainSection = () => {
             </div>
 
             <div>
-              <button className="submit-btn w-fit font-light border-2 border-black px-7 py-1 transition-all hover:bg-primaryText hover:text-black  md:py-3 md:px-12 lg:px-14 text-lg md:text-xl lg:text-2xl  ">
+              <button
+              onClick={() => router.push('/hi')}
+              className="submit-btn w-fit font-light border-2 border-black px-7 py-1 transition-all hover:bg-primaryText hover:text-black  md:py-3 md:px-12 lg:px-14 text-lg md:text-xl lg:text-2xl  ">
                 Join the waitlist
               </button>
             </div>
