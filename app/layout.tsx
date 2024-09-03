@@ -21,7 +21,7 @@ export default function RootLayout({
             {/* <link rel="icon" href="/favicon.ico" sizes="any" /> */}
         </head>
         <body>
-          <main id="root" className='flex h-screen w-screen flex-col md:p-6 transition-colors duration-[3s] md:justify-between md:px-20 md:py-4 '>{children}</main>
+          <main id="root" className='flex h-screen w-screen flex-col md:p-6 transition-colors duration-[3s] md:justify-between px-5 md:px-20 md:py-4 '>{children}</main>
         </body>
       </html>
     )
