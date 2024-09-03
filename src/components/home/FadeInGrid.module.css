@@ -76,28 +76,28 @@
   height: 2rem;  /* controls the height of the borders */
 }
 
-.overlay .topLeft {
+.topLeft {
   border-left: var(--border-style);
   border-top: var(--border-style);
   top: var(--border-space);
   left: var(--border-space);
 }
 
-.overlay .topRight {
+.topRight {
   border-right: var(--border-style);
   border-top: var(--border-style);
   top: var(--border-space);
   right: var(--border-space);
 }
 
-.overlay .bottomLeft {
+.bottomLeft {
   border-left: var(--border-style);
   border-bottom: var(--border-style);
   bottom: var(--border-space);
   left: var(--border-space);
 }
 
-.overlay .bottomRight {
+.bottomRight {
   border-right: var(--border-style);
   border-bottom: var(--border-style);
   bottom: var(--border-space);
