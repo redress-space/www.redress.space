@@ -14,7 +14,7 @@ const WelcomeEmail = () => {
           Thank you for joining the Redress waitlist! You’re now one step closer to discovering a smarter way to shop and finding clothes that truly match your style and needs.
         </p>
         <p style={{ color: '#333333', fontSize: '18px', lineHeight: '1.6' }}>
-          We’ll be in touch as soon as your exclusive access is ready. In the meantime, follow us on <a href="https://www.instagram.com" style={{ color: '#333333', textDecoration: 'none' }}>Instagram</a> for the latest updates.
+          We’ll be in touch as soon as your exclusive access is ready. In the meantime, follow us on <a href="https://www.instagram.com/redress.space?igsh=MTIzNzlmNnZoajdvZA%3D%3D&utm_source=qr" style={{ color: '#333333', textDecoration: 'none' }}>Instagram</a> for the latest updates.
         </p>
         <p style={{ color: '#333333', fontSize: '18px', lineHeight: '1.6' }}>
           Looking forward to helping you find the clothes you need!
