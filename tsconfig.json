@@ -18,12 +18,12 @@
       }
     ],
     "paths": {
-      "@/*": ["src_/*"]
+      "@/*": ["/*"]
     },
     "types": [
         "@cloudflare/workers-types/2023-07-01"
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src_/app/layout.js", "src_/pages/index.js", "src_/components/Navbar.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts",],
   "exclude": ["node_modules"]
 }
