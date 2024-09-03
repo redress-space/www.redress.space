@@ -114,13 +114,13 @@ export default function WaitlistPage() {
               <p className="text-sm text-gray-700">
                 By continuing, you agree to Redress{" "}
                 <Link href={"/privacy"}>
-                  <span className="font-medium text-gray-600 dark:text-white underline ">
+                  <span className="font-medium text-gray-600  underline ">
                     Privacy
                   </span>
                 </Link>{" "}
                 policy and acknowledge you’ve read our{" "}
                 <Link href={"/terms"}>
-                  <span className="font-medium text-gray-600 dark:text-white underline ">
+                  <span className="font-medium text-gray-600  underline ">
                     Terms
                   </span>
                 </Link>{" "}
