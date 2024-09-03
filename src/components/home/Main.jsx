@@ -28,8 +28,8 @@ const MainSection = () => {
   ];  
 
   const sets = [
-    // {data: sneakers, alt: 'Bright colored sneakers that feel old school and classic'}, 
-    // {data: party, alt: 'I need a look for Gatsby Party'},
+    {data: sneakers, alt: 'Bright colored sneakers that feel old school and classic'}, 
+    {data: party, alt: 'I need a look for Gatsby Party'},
     {data: somethigLikeThis, alt: 'Get me similar look'}
   ];
 
@@ -57,7 +57,7 @@ const MainSection = () => {
     };
 
     if (textDone && imagesDone) {
-      // const  timeout = setTimeout(() => move(), 2000);
+      const  timeout = setTimeout(() => move(), 2000);
       return () => clearTimeout(timeout);
     }
   }, [textDone, imagesDone]);
