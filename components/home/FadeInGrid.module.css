@@ -1,19 +1,25 @@
 .cards {
   --animation-speed-out: 1.5s;
   --animation-speed-in: 2s;
+  z-index: 100;
+
+}
+
+.card {  
+  width: 12rem;
+  @apply h-auto;
+
+  @screen lg {
+    width: 14rem;
+  } 
+
+  @screen xl {
+    width: 16rem;
+  }    
 }
 
 .image {
   display: block
-}
-
-.imageWrap {
-  @apply h-auto;
-  width: 100%;
-
-  @screen md {
-    width: 17rem;
-  }
 }
 
 .overaly::before {

@@ -73,7 +73,7 @@ const MainSection = () => {
   }
 
   const onFadeInCompletion = () => {
-    console.log(`onFadeInCompletion {completedAnimations}`);
+    // console.log(`onFadeInCompletion {completedAnimations}`);
     setImagesDone(true);
   }
 

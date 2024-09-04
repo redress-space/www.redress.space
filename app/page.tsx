@@ -7,13 +7,9 @@ import HomeBody from '../components/home/Index.jsx';
 
 export default function Index() {
   return (
-    <div className=''>
+    <div className='flex flex-col md:justify-between h-full'>
       <Navbar />
-      
-      <main>
-        <HomeBody />
-      </main>
-
+      <HomeBody />
       <Footer />
     </div>
   );

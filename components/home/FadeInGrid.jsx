@@ -25,7 +25,7 @@ const FadeInGrid = ({ images, onFadeInComplete, onFadeOutComplete }) => {
     if (imagesList.length == 0) {
       setImagesList([...images]);
     } else if (!areArraysEqual(images, imagesList)) {
-      console.log('RESET');
+      // console.log('RESET');
       setFadingOut(true);
       setCountFadingOut(0);
       setCountFadingIn(0);
@@ -34,7 +34,7 @@ const FadeInGrid = ({ images, onFadeInComplete, onFadeOutComplete }) => {
 
   useEffect(() => {
     if (imagesList.length > 0 && imagesList.length === countFadingOut) {
-      console.log('Fading out completed.');
+      // console.log('Fading out completed.');
       setImagesList([...images]);
       setFadingOut(false);
       if (onFadeOutComplete) onFadeOutComplete();
@@ -43,7 +43,7 @@ const FadeInGrid = ({ images, onFadeInComplete, onFadeOutComplete }) => {
 
   useEffect(() => {
     if (imagesList.length > 0 && imagesList.length === countFadingIn) {
-      console.log('Fading in completed.');
+      // console.log('Fading in completed.');
       if (onFadeInComplete) onFadeInComplete();
     }
   }, [countFadingIn]);
@@ -63,9 +63,11 @@ const FadeInGrid = ({ images, onFadeInComplete, onFadeOutComplete }) => {
 
 
   return (
-    <div className={`grid grid-cols-2 gap-4 py-4 md:px-4 ${styles.cards}`} >
+    <div className={`grid grid-cols-2 gap-2 md:gap-4 py-4 md:px-4 grow overflow-hidden  ${styles.cards}`} >
       {imagesList.map((image, index) => (
-        <div key={index} onAnimationEnd={handleAnimationEnd} className={`${fadingOut ? styles.fadeOut : styles.fadeIn}  relative  md:px-4 py-4 font-alexandria`}>
+        <div  key={index} 
+              onAnimationEnd={handleAnimationEnd} 
+              className={`${fadingOut ? styles.fadeOut : styles.fadeIn} ${styles.card} relative  md:px-4 py-4 font-alexandria`}>
           <div className={`${styles.overaly} relative p-4`}>
             <img src={image.src} alt={`Grid item ${index}`} className={`object-fit  ${styles.image}`} />
             {image.camera && <>
