@@ -38,6 +38,6 @@ export async function verifyCode(email: string, code: string): Promise<number | 
     throw new Error('Database error.');
   }
 
-  await sendOnJoinWaitlistEmail(email);
+  await sendOnJoinWaitlistEmail(email, count ? String(count) : 'N');
   return count;
 }

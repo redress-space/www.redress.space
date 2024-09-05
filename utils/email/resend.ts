@@ -15,12 +15,12 @@ export const sendVerificationEmail = async (email: string, verificationCode: str
 };
 
 
-export const sendOnJoinWaitlistEmail = async (email: string) => {
+export const sendOnJoinWaitlistEmail = async (email: string, count: string) => {
     await resend.emails.send({
       from: "no-reply@redress.space",
       to: email,
       subject: `Redress - your are in the list`,
       text: `Your are in the list`,
-      react: WelcomeEmail(),
+      react: WelcomeEmail({verificationMessage: count}),
     });
   };
