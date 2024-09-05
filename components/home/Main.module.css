@@ -1,13 +1,21 @@
 
 .container {
-
-
   @screen md {
     max-height: 100vh;
     min-height: 75vh;
   }
 }
 
-.line {
-  height: 5rem;
+.typewriterContainer {
+  --line-height: 1.75rem;
+  --padding: 1rem;
+
+  padding: var(--padding);
+  padding-bottom: 2rem;
+  height: calc( (var(--line-height) * 3) + var(--padding) * 2 + var(--padding) );
+
+  @screen md {
+    --line-height: 2.25rem;
+    --padding: 1.125rem;
+  }  
 }

@@ -14,6 +14,7 @@
     "@supabase/supabase-js": "^2.45.3",
     "bootstrap": "^5.3.3",
     "handlebars": "^4.7.8",
+    "lucide-react": "^0.438.0",
     "next": "^14.2.7",
     "next-themes": "^0.3.0",
     "react": "^18",

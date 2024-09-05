@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (<>
-    <div className='flex justify-between'>
+    <div className='flex justify-between z-150'>
       <div className='mb-3'>
         <a className='font-medium text-black hover:text-gray-600  dark:hover:text-gray-200 hover:underline' href='mailto:info@redress.space'>Contact Us</a>
       </div>

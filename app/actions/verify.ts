@@ -5,6 +5,8 @@ import { sendOnJoinWaitlistEmail } from "../../utils/email/resend";
 import { createClient } from '../../utils/supabase/server';
 const supabase = createClient();
 
+
+
 export async function verifyCode(email: string, code: string): Promise<void> {
   // Check if the email and verification code match a record in the waitlist
   const { data, error } = await supabase

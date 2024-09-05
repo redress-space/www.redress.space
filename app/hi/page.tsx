@@ -6,23 +6,22 @@ import { useRouter } from "next/navigation";
 import { signUp } from "../actions/signup";
 import { verifyCode } from "../actions/verify";
 import { Checkbox } from "@headlessui/react";
-import { redirect } from 'next/navigation'
+import Logo from "@/components/Logo";
 import Link from "next/link";
 
-export const runtime = 'edge';
+export const runtime = "edge";
 
 export default function WaitlistPage() {
   const [email, setEmail] = useState("");
   const [code, setCode] = useState("");
 
   const [message, setMessage] = useState("");
+  const [errMessage, setErrMessage] = useState("");
 
   const router = useRouter();
   const [enabled, setEnabled] = useState(false);
   const [waitVerify, setWaitVerify] = useState(false);
   const [verificationDone, setVerificationDone] = useState(false);
-
-  
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,31 +37,42 @@ export default function WaitlistPage() {
 
   const handleCode = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrMessage("");
+
     try {
       // Call the signUp action with the email
       await verifyCode(email, code);
-      setMessage("Verification done");
+      // setMessage("Verification done");
       setVerificationDone(true);
     } catch (error: any) {
-      setMessage(error.message || "An error occurred.");
+      setErrMessage(error.message || "An error occurred.");
     }
   };
 
-  const done = () => (
+  const doneForm = () => (
     <div className="w-full max-w-md">
       <div className="mb-28 text-center">
-        <h1 className="text-5xl mb-4 font-alexandria">REDRESS</h1>
-        <p>
-          All done! We’ll notify you when we will be ready!
-        </p>
+      <div className=" mb-1 flex justify-center">
+          <div className="w-4/5">
+            <Logo />
+          </div>
+        </div>
+
+        <div className="text-lg">
+          <p className="font-bold mb-2"> You’re In! 🎉</p>
+          <p>
+            Thank you for joining the waitlist! We’ll keep you posted and make
+            sure you're the first to know when we are ready. Stay tuned!
+          </p>
+        </div>
       </div>
       <div className="w-full">
         <button
-            onClick={() => router.push("/")}
-            className="w-full p-2 bg-gray-600 text-white hover:bg-gray-700  "
-          >
-            Exit
-          </button>
+          onClick={() => router.push("/")}
+          className="w-full font-light border-2 border-black px-4 py-1 transition-all hover:bg-primaryText hover:text-black  md:py-3 md:px-5 lg:px-14 text-lg md:text-xl lg:text-2xl  "
+        >
+          Exit
+        </button>
       </div>
     </div>
   );
@@ -70,7 +80,12 @@ export default function WaitlistPage() {
   const emailForm = () => (
     <div className="w-full max-w-md">
       <div className="mb-20 text-center">
-        <h1 className="text-5xl mb-10 font-alexandria">REDRESS</h1>
+        <div className=" mb-1 flex justify-center">
+          <div className="w-4/5">
+            <Logo />
+          </div>
+        </div>
+
         <p>
           We will send you a verification code to register your account and to
           verify your email
@@ -141,12 +156,17 @@ export default function WaitlistPage() {
     </div>
   );
 
-  const waitCode = () => (
+  const waitCodeForm = () => (
     <div className="w-full max-w-md">
       <div className="mb-20 text-center">
-        <h1 className="text-5xl mb-10 font-alexandria">REDRESS</h1>
+        <div className=" mb-1 flex justify-center">
+          <div className="w-4/5">
+            <Logo />
+          </div>
+        </div>
         <p>
-          We have sent a verification code to <span className="text-semibold">{email}</span>
+          We have sent a verification code to{" "}
+          <span className="font-semibold">{email}</span>
         </p>
       </div>
       <form className="flex flex-col space-y-4" onSubmit={handleCode}>
@@ -155,10 +175,11 @@ export default function WaitlistPage() {
             type="number"
             placeholder="Enter 6-digit code"
             required
-            className="p-2 mb-8 border border-black w-full"
+            className="p-2 border border-black w-full"
             value={code}
             onChange={(e) => setCode(e.target.value)}
           />
+          {errMessage && <p className="text-rose-600	">{errMessage}</p>}
         </div>
 
         <button
@@ -195,8 +216,8 @@ export default function WaitlistPage() {
           </svg>
         </button>
       </div>
-      {!verificationDone && (waitVerify ? waitCode() : emailForm())}
-      {verificationDone && done()}
+      {!verificationDone && (waitVerify ? waitCodeForm() : emailForm())}
+      {verificationDone && doneForm()}
     </div>
   );
 }

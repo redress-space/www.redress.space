@@ -6,7 +6,7 @@ const Index = () => {
     <div className=''>
       <Main/>
     </div>
-  )
+  );
 }
 
 export default Index

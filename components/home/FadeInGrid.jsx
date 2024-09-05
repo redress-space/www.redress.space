@@ -67,7 +67,7 @@ const FadeInGrid = ({ images, onFadeInComplete, onFadeOutComplete }) => {
       {imagesList.map((image, index) => (
         <div  key={index} 
               onAnimationEnd={handleAnimationEnd} 
-              className={`${fadingOut ? styles.fadeOut : styles.fadeIn} ${styles.card} relative  md:px-4 py-4 font-alexandria`}>
+              className={`${fadingOut ? styles.fadeOut : styles.fadeIn} ${styles.card} relative mx-auto md:px--4 py-4 font-alexandria`}>
           <div className={`${styles.overaly} relative p-4`}>
             <img src={image.src} alt={`Grid item ${index}`} className={`object-fit  ${styles.image}`} />
             {image.camera && <>
