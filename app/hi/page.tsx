@@ -44,7 +44,7 @@ export default function WaitlistPage() {
       const count = await verifyCode(email, code);
       // setMessage("Verification done");
       setVerificationDone(true);
-      setVerificationMessage('You ')
+      setVerificationMessage(`${count}`)
     } catch (error: any) {
       setErrMessage(error.message || "An error occurred.");
     }
