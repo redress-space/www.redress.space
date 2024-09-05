@@ -15,23 +15,23 @@ export default function WaitlistPage() {
   const [email, setEmail] = useState("");
   const [code, setCode] = useState("");
 
-  const [message, setMessage] = useState("");
   const [errMessage, setErrMessage] = useState("");
 
   const router = useRouter();
   const [enabled, setEnabled] = useState(false);
   const [waitVerify, setWaitVerify] = useState(false);
   const [verificationDone, setVerificationDone] = useState(false);
+  const [verificationMessage, setVerificationMessage] = useState("");
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       // Call the signUp action with the email
       await signUp(email);
-      setMessage("Verification code sent to your email!");
+      // setMessage("Verification code sent to your email!");
       setWaitVerify(true); // Redirect to verification page or show a success message
     } catch (error: any) {
-      setMessage(error.message || "An error occurred.");
+      // setMessage(error.message || "An error occurred.");
     }
   };
 
@@ -41,9 +41,10 @@ export default function WaitlistPage() {
 
     try {
       // Call the signUp action with the email
-      await verifyCode(email, code);
+      const count = await verifyCode(email, code);
       // setMessage("Verification done");
       setVerificationDone(true);
+      setVerificationMessage('You ')
     } catch (error: any) {
       setErrMessage(error.message || "An error occurred.");
     }
@@ -59,7 +60,7 @@ export default function WaitlistPage() {
         </div>
 
         <div className="text-lg">
-          <p className="font-bold mb-2"> You’re In! 🎉</p>
+          <p className="font-bold mb-2"> You’re our {verificationMessage}th shopping insider in line 🎉</p>
           <p>
             Thank you for joining the waitlist! We’ll keep you posted and make
             sure you're the first to know when we are ready. Stay tuned!

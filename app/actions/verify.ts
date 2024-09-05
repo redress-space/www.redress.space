@@ -7,7 +7,7 @@ const supabase = createClient();
 
 
 
-export async function verifyCode(email: string, code: string): Promise<void> {
+export async function verifyCode(email: string, code: string): Promise<number | null> {
   // Check if the email and verification code match a record in the waitlist
   const { data, error } = await supabase
     .from('waitlist')
@@ -30,5 +30,14 @@ export async function verifyCode(email: string, code: string): Promise<void> {
     throw new Error('Error updating verification status.');
   }
 
+  const { count, error: coutError } = await supabase
+  .from('waitlist')
+  .select('*', { count: 'exact', head: true })
+
+  if (updateError) {
+    throw new Error('Database error.');
+  }
+
   await sendOnJoinWaitlistEmail(email);
+  return count;
 }
