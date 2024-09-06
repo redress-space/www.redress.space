@@ -26,10 +26,10 @@ const EmailTemplate = ({ verificationCode }: EmailTemplateProps) => (
         </p>
         <div
           style={{
-            fontSize: "24px",
+            fontSize: "32px",
             fontWeight: "bold",
             color: "#333333",
-            padding: "10px",
+            padding: "14px",
             border: "2px solid #f0ff94",
             display: "inline-block",
             margin: "20px 0",
