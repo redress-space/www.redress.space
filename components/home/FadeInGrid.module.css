@@ -9,6 +9,10 @@
   width: 9rem;
   @apply h-auto;
 
+  @screen md {
+    width: 13rem;
+  } 
+
   @screen lg {
     width: 14rem;
   } 
