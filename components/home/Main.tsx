@@ -145,7 +145,7 @@ const MainSection = () => {
             </div>
 
             <div className={`mb-4 md:mb-24 `}>
-              <div className={`relative border rounded-lg bg-gray-100 ${styles.typewriterContainer}`}>
+              <div className={`relative  ${styles.typewriterContainer}`}>
                 <h2 className={`text-xl md:text-2xl lg:text-3xl font-light `}>
                   <Typewriter text={title} onComplete={onTextCompletion} />
                 </h2>
