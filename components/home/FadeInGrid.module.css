@@ -6,7 +6,7 @@
 }
 
 .card {  
-  width: 12rem;
+  width: 9rem;
   @apply h-auto;
 
   @screen lg {
