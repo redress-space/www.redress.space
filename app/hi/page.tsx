@@ -173,11 +173,14 @@ export default function WaitlistPage() {
       <form className="flex flex-col space-y-4" onSubmit={handleCode}>
         <div className="mb-20 w-full">
           <input
-            type="number"
+            type="text"
             placeholder="Enter 6-digit code"
             required
+            inputMode="numeric"
+            autoComplete="one-time-code" 
             className="p-2 border border-black w-full"
             value={code}
+            pattern="[0-9]*" 
             onChange={(e) => setCode(e.target.value)}
           />
           {errMessage && <p className="text-rose-600	">{errMessage}</p>}

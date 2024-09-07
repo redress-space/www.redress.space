@@ -20,16 +20,16 @@ const EmailTemplate = ({ verificationCode }: EmailTemplateProps) => (
         <h1 style={{ color: "#333333" }}>REDRESS</h1>
       </div>
       <div style={{ textAlign: "center" }}>
-        <p style={{ color: "#666666" }}>
+        <p style={{ color: "#666666", fontSize: "16px" }}>
           Thank you for signing up! To complete your registration, please verify
           your email address by entering the following verification code:
         </p>
         <div
           style={{
-            fontSize: "24px",
+            fontSize: "32px",
             fontWeight: "bold",
             color: "#333333",
-            padding: "10px",
+            padding: "14px",
             border: "2px solid #f0ff94",
             display: "inline-block",
             margin: "20px 0",
@@ -47,7 +47,7 @@ const EmailTemplate = ({ verificationCode }: EmailTemplateProps) => (
           textAlign: "center",
           paddingTop: "20px",
           color: "#1f1f1f",
-          fontSize: "18px",
+          fontSize: "16px",
         }}
       >
         <p>Thanks!</p>
