@@ -113,7 +113,7 @@ const MainSection = () => {
     };
 
     if (textDone && imagesDone) {
-      const timeout = setTimeout(() => move(), 2000);
+      const timeout = setTimeout(() => move(), 800);
       return () => clearTimeout(timeout);
     }
   }, [textDone, imagesDone]);
