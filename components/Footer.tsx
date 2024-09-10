@@ -4,8 +4,8 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <>
-      <div className="md:absolute bottom-0  w-full flex justify-between z-150 py-6 px-4 md:px-20 xl:px-12">
-        <div className="mb-3">
+      <div className="md:absolute bottom-0  w-full flex justify-between z-150 py-3 px-4 md:px-20 xl:px-12">
+        <div className="">
           <a
             className="font-medium text-black hover:text-gray-600  dark:hover:text-gray-200 hover:underline"
             href="mailto:info@redress.space"

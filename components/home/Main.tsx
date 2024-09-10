@@ -163,7 +163,7 @@ const MainSection = () => {
           </div>
         </div>
 
-        <div className="md:absolute right-0 xl:right-28	 w-full md:w-4/5 lg:w-3/5 xl:w-3/6">
+        <div className="md:absolute lg:bottom-8 right-0 md:right-5 lg:right-0 xl:right-20	 w-full md:w-4/5 lg:w-3/5 xl:w-3/6">
           <FadeInGrid
             images={images}
             onFadeInComplete={onFadeInCompletion}
