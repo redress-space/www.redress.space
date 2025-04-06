@@ -2,42 +2,28 @@
 'use server';
 
 import { sendOnJoinWaitlistEmail } from "../../utils/email/resend";
-import { createClient } from '../../utils/supabase/server';
-const supabase = createClient();
-
-
 
 export async function verifyCode(email: string, code: string): Promise<number | null> {
-  // Check if the email and verification code match a record in the waitlist
-  const { data, error } = await supabase
-    .from('waitlist')
-    .select('*')
-    .eq('email', email)
-    .eq('verification_code', code)
-    .single();
-
-  if (error || !data) {
-    throw new Error('Invalid verification code or email.');
+  if (!email || !code) {
+    throw new Error("Email or verification code is undefined.");
   }
 
-  // Update the user record to mark it as verified
-  const { error: updateError } = await supabase
-    .from('waitlist')
-    .update({ is_verified: true })
-    .eq('id', data.id);
+  const WAITLIST_REGISTER_FUNCTION_URL = 
+    process.env.NEXT_PUBLIC_WAITLIST_REGISTER_FUNCTION_URL!;
 
-  if (updateError) {
-    throw new Error('Error updating verification status.');
+  // Call the Cloud Function with email and confirmationCode to trigger verification
+  const response = await fetch(WAITLIST_REGISTER_FUNCTION_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ email, confirmationCode: code })
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Cloud function error: ${errorText}`);
   }
-
-  const { count, error: coutError } = await supabase
-  .from('waitlist')
-  .select('*', { count: 'exact', head: true })
-
-  if (updateError) {
-    throw new Error('Database error.');
-  }
-
-  await sendOnJoinWaitlistEmail(email, count ? String(count) : 'N');
-  return count;
+  await sendOnJoinWaitlistEmail(email, 'N');
+  return 0;
 }

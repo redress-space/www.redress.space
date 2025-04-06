@@ -11,7 +11,7 @@ const WelcomeEmail = ({verificationMessage}: {verificationMessage: string}) => {
           Hey there!
         </p>
         <p style={{ color: '#333333', fontSize: '18px', lineHeight: '1.6' }}>
-          Thank you for joining the <span style={{ fontWeight: '600' }}>Redress</span> waitlist as our <span style={{ fontWeight: '600' }}>{verificationMessage}th</span> shopping insider! You’re now one step closer to discovering a smarter way to shop and finding clothes that truly match your style and needs.
+          Thank you for joining the <span style={{ fontWeight: '600' }}>Redress</span> waitlist as our shopping insider! You’re now one step closer to discovering a smarter way to shop and finding clothes that truly match your style and needs.
         </p>
         <p style={{ color: '#333333', fontSize: '18px', lineHeight: '1.6' }}>
           We’ll be in touch as soon as your exclusive access is ready. In the meantime, follow us on <a href="https://www.instagram.com/redress.space?igsh=MTIzNzlmNnZoajdvZA%3D%3D&utm_source=qr" style={{ color: '#333333', textDecoration: 'underline' }}>Instagram</a> for the latest updates.

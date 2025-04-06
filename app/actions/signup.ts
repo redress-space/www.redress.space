@@ -1,67 +1,45 @@
 // app/actions/signup.ts
 "use server";
 
-import { createClient } from "../../utils/supabase/server";
 import { sendVerificationEmail } from "../../utils/email/resend";
 
-const supabase = createClient();
-
+// const supabase = createClient();
 
 export async function signUp(email: string) {
   if (!email) {
     throw new Error("email undefined");
   }
 
-  // Check if the email already exists in the waitlist
-  const { data: existingUser, error: existingUserError } = await supabase
-    .from("waitlist")
-    .select("*")
-    .eq("email", email)
-    .single();
+  // Use an environment variable for the Cloud Function endpoint
+  const WAITLIST_REGISTER_FUNCTION_URL =
+    process.env.NEXT_PUBLIC_WAITLIST_REGISTER_FUNCTION_URL ||
+    "https://on-waitlist-register-379364220772.europe-west2.run.app";
 
-  if (existingUserError && existingUserError.code !== "PGRST116") {
-    console.log(existingUserError);
+  // Call the Cloud Function with the email
+  const response = await fetch(WAITLIST_REGISTER_FUNCTION_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ email })
+  });
 
-    throw new Error("Error checking existing users.");
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Cloud function error: ${errorText}`);
   }
 
-  let verificationCode: string;
+  // Parse the response, which includes the verification code
+  const { message, verification_code }: 
+    { message?: string; verification_code?: string } = await response.json();
 
-  if (existingUser) {
-    // Email already exists, so generate a new verification code
-    verificationCode = String(Math.floor(100000 + Math.random() * 900000));
-
-    // Update the record with the new verification code
-    const { error } = await supabase
-      .from("waitlist")
-      .update({ verification_code: verificationCode, is_verified: false })
-      .eq("email", email);
-
-    if (error) {
-      throw new Error("Error updating verification code.");
-    }
-  } else {
-    // Generate a new verification code for a new sign-up
-    verificationCode = String(Math.floor(100000 + Math.random() * 900000));
-
-    // Insert the user into the waitlist table with the verification code
-    const { error } = await supabase
-      .from("waitlist")
-      .insert([
-        { email, verification_code: verificationCode, is_verified: false },
-      ]);
-
-    if (error) {
-      throw new Error("Error inserting new user.");
+  if (message == "verify" && verification_code) {
+    // Send the verification code to the user's email using Resend
+    try {
+      await sendVerificationEmail(email, verification_code);
+    } catch (error) {
+      throw new Error("Failed to send verification email.");
     }
   }
-
-  // Send the verification code to the user's email using Resend
-  try {
-    await sendVerificationEmail(email, verificationCode);
-  } catch (error) {
-    throw new Error("Failed to send verification email.");
-  }
-
   return true;
 }

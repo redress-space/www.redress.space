@@ -60,7 +60,7 @@ export default function WaitlistPage() {
         </div>
 
         <div className="text-lg">
-          <p className="font-bold mb-2"> You&apos;re our {verificationMessage}th shopping insider in line 🎉</p>
+            <p className="font-bold mb-4 text-xl">Congratulations, Shopping Insider!</p>
           <p>
             Thank you for joining the waitlist! We&apos;ll keep you posted and make
             sure you&apos;re the first to know when we are ready. Stay tuned!
