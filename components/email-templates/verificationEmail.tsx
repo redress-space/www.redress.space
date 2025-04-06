@@ -51,7 +51,7 @@ const EmailTemplate = ({ verificationCode }: EmailTemplateProps) => (
         }}
       >
         <p>Thanks!</p>
-        <p>2024 Redress team</p>
+        <p>2025 Redress team</p>
       </div>
     </div>
   </div>
