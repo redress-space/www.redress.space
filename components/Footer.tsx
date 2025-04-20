@@ -4,8 +4,8 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <>
-      <div className="md:absolute bottom-0  w-full flex justify-between z-150 py-3 px-4 md:px-20 xl:px-12">
-        <div className="">
+      <div className="md:absolute bottom-0  w-full flex justify-between z-150 py-3 px-4">
+        {/* <div className="">
           <a
             className="font-medium text-black hover:text-gray-600  dark:hover:text-gray-200 hover:underline"
             href="mailto:info@redress.space"
@@ -13,6 +13,32 @@ const Footer = () => {
             Contact Us
           </a>
 
+          <div>
+              <a
+                href="https://alpha.redress.space"
+                className="font-medium text-black hover:text-gray-600  dark:hover:text-gray-200 hover:underline"
+                target="_blank"
+              >
+                Demo
+              </a>
+            </div>
+
+        </div> */}
+        <div className="flex gap-x-6">
+          <a
+            className="font-medium text-black hover:text-gray-600 dark:hover:text-gray-200 hover:underline"
+            href="mailto:info@redress.space"
+          >
+            Contact Us
+          </a>
+          <a
+            href="https://alpha.redress.space"
+            className="font-medium text-black hover:text-gray-600 dark:hover:text-gray-200 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Demo
+          </a>
         </div>
 
         <div className="flex text-sm ">

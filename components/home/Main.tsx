@@ -160,6 +160,7 @@ const MainSection = () => {
                 Join the waitlist
               </button>
             </div>
+
           </div>
         </div>
 
