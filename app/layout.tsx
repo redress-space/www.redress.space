@@ -19,6 +19,7 @@ export default function RootLayout({
       <html lang="en">
         <head>
             {/* <link rel="icon" href="/favicon.ico" sizes="any" /> */}
+            <script src="https://analytics.ahrefs.com/analytics.js" data-key="Bq6b8EzLqQUkVFQWCWkrJg" async></script>
         </head>
         <body>
           <main id="root" className='flex h-screen w-screen flex-col  transition-colors duration-[3s] md:justify-between md:p-6 px-5 md:px-16 lg:px-20 md:py-4 '>{children}</main>
